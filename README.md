@@ -55,7 +55,7 @@ To set up the Neovim configuration on your system, you can follow the instructio
 2. Make a backup of your current Neovim configuration:
 
    ```bash
-   cp -r ~/.config/nvim/ ~/.config/nvim_backup
+   cp -r ~/.config/nvim ~/.config/nvim_backup
    ```
 
 3. Clone this repository to your local machine:
@@ -97,12 +97,12 @@ To debug a LSP installation, you can look at the error with `:Mason` but read th
 
 To debug a LSP, you just need to open a file with the right extension/filetype and then call `:checkhealth lsp` to see it the LSP is correctly loaded.
 
-## Troubleshooting
+## General troubleshooting
 
 ### Cache issue, weird behavior
 In case of cache issue, delete these folders
 ```bash
-rm -rf .local/share/nvim
+rm -rf ~/.local/share/nvim
 ```
 
 ```bash
@@ -110,3 +110,8 @@ rm -rf ~/.cache/nvim
 ```
 
 And then restart your neovim.
+
+### Yanking behavior
+This repository sync the clipboard between the OS and Neovim. You can disable that option and have separated clipboard.
+
+[Comment me](https://github.com/Lamphie/nvim/blob/f2c37f19d0686356b64ad7deaa3f313ffacdbedd/lua/settings.lua#L27)
