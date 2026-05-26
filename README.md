@@ -44,7 +44,7 @@ To set up the Neovim configuration on your system, you can follow the instructio
    - terraform or opentofu (both optional)
 
    Both `unzip` and `npm` are mainly needed by Mason to install the LSP.
-   For terraform/opentofu, it will be use by [conform](https://github.com/Lamphie/nvim/blob/b251fa71a186e631dc9fa2bfd7c75191678ef5f1/lua/plugins/conform.lua#L52) to autoformat tf file.
+   For terraform/opentofu, it will be use by [conform](https://github.com/Lamphie/nvim/blob/fe20f38028f8f53a273da3efd1a3ad1c176133fc/plugin/conform.lua#L50) to autoformat tf file.
 
    Use your distribution package manager. In my case, I will be using pacman.
 
@@ -79,14 +79,14 @@ Instead, make the change in the configuration file. That will tell `vim.pack` an
 
 ### Custom Ansible Lint Configuration
 
-A custom Ansible lint configuration can be utilized. You can place the Ansible lint configuration file at the following location: [nvim-lspconfig.lua](https://github.com/Lamphie/nvim/blob/b251fa71a186e631dc9fa2bfd7c75191678ef5f1/lua/plugins/nvim-lspconfig.lua#L237).
+A custom Ansible lint configuration can be utilized. You can place the Ansible lint configuration file at the following location: [nvim-lspconfig.lua](https://github.com/Lamphie/nvim/blob/fe20f38028f8f53a273da3efd1a3ad1c176133fc/plugin/lsp.lua#L138).
 
 For more details on configuring Ansible Lint, you can refer to the official documentation [here](https://ansible.readthedocs.io/projects/lint/configuring/).
 
 ### Adding a new feature/plugin
 
-Any new plugin file added in the `~/.config/nvim//plugin` will be loaded automatically thanks to this [plugin call](https://github.com/Lamphie/nvim/blob/b251fa71a186e631dc9fa2bfd7c75191678ef5f1/lua/config/lazy.lua#L23).
-If you want to add a plugin, just copy an easy plugin file like [kanagawa-paper](https://github.com/Lamphie/nvim/blob/main/lua/plugins/kanagawa-paper.lua) and adjust to your new plugin.
+Any new plugin file added in the `~/.config/nvim/plugin` will be loaded automatically [plugin folder](https://github.com/Lamphie/nvim/tree/main/plugin).
+If you want to add a plugin, just copy an easy plugin file like [nordic](https://github.com/Lamphie/nvim/blob/main/plugin/nordic.lua) and adjust to your new plugin.
 
 ### Adding and debugging a LSP
 
@@ -96,3 +96,17 @@ To add a LSP, do not install it manually with `Mason`. Instead, add the needed L
 To debug a LSP installation, you can look at the error with `:Mason` but read the log file with `:MasonLog` or at `~/.local/state/nvim/mason.log`.
 
 To debug a LSP, you just need to open a file with the right extension/filetype and then call `:checkhealth lsp` to see it the LSP is correctly loaded.
+
+## Troubleshooting
+
+### Cache issue, weird behavior
+In case of cache issue, delete these folders
+```bash
+rm -rf .local/share/nvim
+```
+
+```bash
+rm -rf ~/.config/nvim
+```
+
+And then restart your neovim.
