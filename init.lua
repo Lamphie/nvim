@@ -1,9 +1,9 @@
 -- Git managed
 
-require("config.settings")
+require("settings")
 
-require("config.keymaps")
+require("keymaps")
 
-require("config.autocmds")
+require("autocmds")
 
-require("config.lazy")
+require("vimpack")
