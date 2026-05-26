@@ -14,7 +14,7 @@ Neovim 0.12.2
 
 This repository will be updated for any Neovim new version.
 
-The current plugin manage is vim.pack release with 0.12. In case you want to use lazy, use the [pre0.12 release](https://github.com/Lamphie/nvim/releases/tag/pre0.12)
+The current plugin manage is vim.pack released with 0.12. In case you want to use lazy, use the [pre0.12 release](https://github.com/Lamphie/nvim/releases/tag/pre0.12). Be aware that [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) has been archived but you can still use it since it works with current 0.12 neovim version.
 
 ## Features
 
