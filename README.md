@@ -106,7 +106,7 @@ rm -rf .local/share/nvim
 ```
 
 ```bash
-rm -rf ~/.config/nvim
+rm -rf ~/.cache/nvim
 ```
 
 And then restart your neovim.
